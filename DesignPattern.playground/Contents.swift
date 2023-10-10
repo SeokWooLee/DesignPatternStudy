@@ -1,4 +1,5 @@
 import Foundation
 
 //StrategyPattern.startExample()
-ObserverPattern.startExample()
+//ObserverPattern.startExample()
+DecoratorPattern.startExample()

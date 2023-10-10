@@ -39,3 +39,31 @@ public struct ObserverPattern: DesignPattern {
         subject.notify()
     }
 }
+
+// MARK: - DecoratorPattern
+public struct DecoratorPattern: DesignPattern {
+    public static func startExample() {
+        var ninja: Ninja = Naruto()
+        printPower(ninja, episode: "에피소드 0")
+
+        ninja = Sharingan(ninja: ninja)
+        printPower(ninja, episode: "에피소드 1: 사륜안 기술 체득")
+
+        ninja = Rasengan(ninja: ninja)
+        printPower(ninja, episode: "에피소드 2: 나선환 기술 체득")
+
+        ninja = ShadowCloneTechnique(ninja: ninja)
+        printPower(ninja, episode: "에피소드 3: 환영분신술 체득")
+    }
+
+    private static func printPower(_ ninja: Ninja, episode: String) {
+        print(
+        """
+        \(episode)
+        \(ninja)
+        파워: \(ninja.power)
+
+        """
+        )
+    }
+}
